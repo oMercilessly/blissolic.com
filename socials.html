@@ -75,7 +75,8 @@
     // Function to update Discord embed based on dark mode
     function updateDiscordEmbed(isDarkMode) {
         const discordFrame = document.getElementById('discord-frame');
-        const theme = isDarkMode ? 'dark' : 'light';
+        //const theme = isDarkMode ? 'dark' : 'light';
+        const theme = isDarkMode ? 'dark' : 'dark';
     
         // Replace the placeholder with your Discord server invite or widget
         discordFrame.src = `https://discord.com/widget?id=1048665452991221811&theme=${theme}`;
