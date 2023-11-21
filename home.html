@@ -36,6 +36,7 @@
 
 </head>
 
+
   
 <body>
 
@@ -45,15 +46,15 @@
     </div>
     <nav class="navbar", font-family="arial">
         <div class="max-width">
-          <img style="height: 100px;" draggable="false" src="favicon.png" alt="logo">
-            <div class="logo"><a  draggable="false" href="#">Blissolic</a></div>
+          <img style="height: 100px;" draggable="false" src="./assets/images/masterlogo.png" alt="logo">
+            <div class="logo"><a  draggable="false" href="#">TicketMaster</a></div>
             <ul class="menu">
                 <li><a href="/" class="menu-btn">Home</a></li>
                               <li><a href="#about" class="menu-btn">About</a></li>
-                <li><a href="/" class="menu-btn">Features</a></li>
-                <li><a href="/" class="menu-btn">Commands</a></li>
-                <li><a href="/" target="_blank" class="menu-btn">Support</a></li>
-                <li><a href="/" target="_blank" class="menu-btn">Invite</a></li>
+                <li><a href="#features" class="menu-btn">Features</a></li>
+                <li><a href="/pages/faq.html" class="menu-btn">Commands</a></li>
+                <li><a href="https://dsc.gg/ticketmaster" target="_blank" class="menu-btn">Support</a></li>
+                <li><a href="https://dsc.gg/invite-ticketmaster" target="_blank" class="menu-btn">Invite</a></li>
               <li><a style="background:-webkit-linear-gradient(#9962c6,#c783ec, #9d57d6);-webkit-background-clip: text; -webkit-text-fill-color: transparent;text-decoration-color:#c783ec;" href="/premium.html" target="_blank" class="menu-btn">Premium</a></li>
             </ul>
             <div class="menu-btn">
@@ -69,15 +70,15 @@
         <div class="max-width">
           <div class="home-content">
             
-                <div class="text-2" style="background:-webkit-linear-gradient(#4aa7fe, #5660f0, #414aeb);-webkit-background-clip: text; -webkit-text-fill-color: transparent;">Blissolic</div><p style="color: #d6d6d6;font-weight:lighter;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;text-transform: uppercase;">
+                <div class="text-2" style="background:-webkit-linear-gradient(#4aa7fe, #5660f0, #414aeb);-webkit-background-clip: text; -webkit-text-fill-color: transparent;">TicketMaster</div><p style="color: #d6d6d6;font-weight:lighter;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;text-transform: uppercase;">
               <br>
-              Fan made website.</p>
+              A Flarelance project.</p>
             <br><br><br><br><br><br><br><br><br><br><br>
             <span class="blurright"></span>
             
-            <button style="user-select: none;font-size:20px;margin-bottom:20px;" class="rb">Subscribe</button><!-- <a id="login" href="https://discord.com/api/oauth2/authorize?client_id=1165303937830756492&redirect_uri=https%3A%2F%2Fticketmaster.juicyorangepg3d.repl.co&response_type=code&scope=identify" class="bg-discord-blue  text-xl px-5 py-3 rounded-md font-bold flex items-center space-x-4 hover:bg-gray-600 transition duration-75">
+            <button style="user-select: none;font-size:20px;margin-bottom:20px;" onclick=" window.open('https://discord.com/api/oauth2/authorize?client_id=1165303937830756492&permissions=8&scope=bot%20applications.commands','_blank')" class="rb">Invite Me</button><!-- <a id="login" href="https://discord.com/api/oauth2/authorize?client_id=1165303937830756492&redirect_uri=https%3A%2F%2Fticketmaster.juicyorangepg3d.repl.co&response_type=code&scope=identify" class="bg-discord-blue  text-xl px-5 py-3 rounded-md font-bold flex items-center space-x-4 hover:bg-gray-600 transition duration-75">
                 <span>Login with Discord</span>
-            </a> --><button style="user-select: none;font-size:20px;width:200px;height:60px;font-weight:normal;text-align:center"  class="invite" id="no-blur")">Discord</button>
+            </a> --><button style="user-select: none;font-size:20px;width:200px;height:60px;font-weight:normal;text-align:center"  class="invite" id="no-blur" onclick=" window.open('https://ticketmaster.juicyorangepg3d.repl.co/premium.html','_blank')">Premium</button>
             <!--  <ion-icon name="open-outline"></ion-icon><!--<a href="https://dsc.gg/ticketmaster">Support Server</a>-->
           </div>
         </div>
@@ -85,17 +86,19 @@
     <!-- about -->
     <section class="about" id="about">
         <div class="max-width">
-            <h2 style="color: white;text-align: center;">wdadawiuojdhwa?</h2>
+            <h2 style="color: white;text-align: center;">What is TicketMaster?</h2>
           <br>
           <br>
             <div class="about-content">
                 <div class="column center">
                   <center>
-                    <p style="color: white;">wdaduawhudhawiduhwauidddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.</p></center>
+                    <p style="color: white;">TicketMaster is the central bot for all your ticketing needs. Create panels at the click of a button. Let your users do what ever they need, simply ready for them at the push of a button. With an amazing support team, working devs and constructive feedback, we can all push TicketMaster to the limits.</p></center>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- features -->
     <section class="services" id="features">
         <div class="max-width">
             <h2 class="title">Features</h2>
@@ -131,11 +134,60 @@
                </div>
             </div>
         </div>
-    
-    <!-- features -->
+    </section>
+
+  <!-- staff -->
+      <section class="teams" id="teams">
+        <div class="max-width">
+            <h2 class="title">Staff</h2>
+            <div class="carousel owl-carousel">
+                <div class="card">
+                    <div class="box">
+                        <img src="./assets/images/avatars/vysdpng.png" alt="JuicyOrange" style="border: 5px solid #4075ee;">
+                        <div class="text">JuicyOrange</div>
+                        <p><a style="border: 2px solid #0042ad;padding: 10px 20px 10px 20px;border-radius: 2px;">
+                          Founder
+                        </a></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="./assets/images/avatars/ribblpng.gif" alt="wwestie">
+                        <div class="text" style="margin-bottom:20px;">wwestie</div>
+                        <p>
+                          <a style="border: 2px solid #0042ad;padding: 10px 20px 10px 20px;border-radius: 2px;">
+                          Community Manager
+                        </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="./assets/images/avatars/kgavatar.png" alt="KeiGeri" style="border: 5px solid #56b5ff;">
+                        <div class="text">Keigeri</div>
+                        <p><a style="border: 2px solid #0042ad;padding: 10px 20px 10px 20px;border-radius: 2px;">
+                          Administrator
+                        </a></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="./assets/images/avatars/ribblpng2.png" alt="Ribbldeck" style="border: 5px solid #77ccff;">
+                        <div class="text">ribbldeck</div>
+                        <p>
+                          <a style="border: 2px solid #0042ad;padding: 10px 20px 10px 20px;border-radius: 2px;">
+                          Directive Overseer
+                        </a>
+                        </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
       <!-- footer -->
     <footer>
-        <span>Blissolic has a smol pp.</span>
+        <span> TicketMaster team -  All rights reserved.</span>
     </footer>
     <script>
         // YouTube API key and Blissolic's channel ID
