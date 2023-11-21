@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,68 +7,76 @@ body {
 
 nav {
     background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav h1 {
-    margin: 0;
+    padding: 1em;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-nav li {
+nav ul li {
     display: inline;
     margin-right: 20px;
 }
 
 nav a {
     text-decoration: none;
-    color: #fff;
+    color: white;
     font-weight: bold;
 }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
+.center-text {
     text-align: center;
 }
 
-section {
-    margin-bottom: 40px;
+#home {
+    text-align: center;
+    padding: 50px;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-button:hover {
-    background-color: #555;
+.video-grid iframe {
+    width: 100%;
+    height: 315px; /* Adjust the height as needed */
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Styles for the Socials Page */
+#socials {
+    text-align: center;
+    padding: 50px;
 }
 
-ul li {
-    margin-bottom: 10px;
+.social-icons {
+    display: flex;
+    justify-content: center;
 }
 
-a {
-    color: #333;
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items horizontally */
+    margin: 0 15px;
+    text-align: center;
 }
 
-a:hover {
-    color: #555;
+.social-icons a {
+    text-decoration: none;
+    color: black;
+}
+
+.social-icons img {
+    width: 100px; /* Adjust the size of social media icons as needed */
+    height: 100px;
+    overflow: hidden; /* Hide overflow for rounded corners */
+}
+
+.social-icons p {
+    margin-top: 10px;
 }
