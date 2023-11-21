@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blissolic - Socials</title>
@@ -16,13 +18,16 @@
     </ul>
 </nav>
 
+<!-- Dark mode toggle button -->
+<button id="toggle-mode">Toggle Mode</button>
+
 <!-- Socials Section -->
 <section id="socials">
     <h2 class="center-text">Follow Blissolic on Social Media</h2>
     <div class="social-icons">
         <!-- Replace the social media links and logos with the actual links and logos -->
         <div class="social-item">
-            <a href="https://www.youtube.com/user/blissolic" target="_blank">
+            <a href="https://www.youtube.com/@blissolic" target="_blank">
                 <img src="youtube.png" alt="YouTube">
                 <p>YouTube</p>
             </a>
@@ -41,15 +46,64 @@
         </div>
         <!-- Add more social media links and logos as needed -->
     </div>
+    
     <!-- Discord Embed -->
     <div class="discord-embed">
         <!-- Replace the placeholder with your Discord server invite or widget -->
-        <iframe src="https://discord.com/widget?id=1048665452991221811&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+        <iframe id="discord-frame" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
     </div>
 </section>
 
 <!-- JavaScript (Optional, for additional functionality) -->
 <script src="script.js"></script>
+
+<!-- Dark mode toggle script -->
+<script>
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+        const body = document.body;
+        body.classList.toggle('dark-mode');
+    
+        // Store the current mode preference in local storage
+        const isDarkMode = body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode);
+    
+        // Update Discord embed based on dark mode
+        updateDiscordEmbed(isDarkMode);
+    }
+    
+    // Function to update Discord embed based on dark mode
+    function updateDiscordEmbed(isDarkMode) {
+        const discordFrame = document.getElementById('discord-frame');
+        const theme = isDarkMode ? 'dark' : 'light';
+    
+        // Replace the placeholder with your Discord server invite or widget
+        discordFrame.src = `https://discord.com/widget?id=1048665452991221811&theme=${theme}`;
+    }
+    
+    // Add event listener to the toggle mode button
+    document.getElementById('toggle-mode').addEventListener('click', toggleDarkMode);
+    
+    // Check and set the initial dark mode state from local storage
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode === 'true') {
+        document.body.classList.add('dark-mode');
+        updateDiscordEmbed(true);
+    } else {
+        updateDiscordEmbed(false);
+    }
+    
+    // Add event listener for page load to trigger fade-in effects
+    document.addEventListener('DOMContentLoaded', function () {
+        // Fade in social icons
+        const socialIcons = document.querySelector('.social-icons');
+        socialIcons.style.opacity = 1;
+    
+        // Fade in Discord embed
+        const discordEmbed = document.querySelector('.discord-embed');
+        discordEmbed.style.opacity = 1;
+    });
+        </script>
 
 </body>
 </html>
