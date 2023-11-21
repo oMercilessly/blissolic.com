@@ -3,45 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading Page - Blissolic</title>
+    <title>Blissolic Loading</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #6f1e51, #1f2f3d); /* Dark purple gradient background */
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #f5f5f5;
-            font-family: 'Arial', sans-serif;
-            color: #333;
+            color: #fff; /* Text color */
         }
 
-        .loader {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #3498db;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
+        #loading-container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out; /* Fade-in animation */
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow */
+            color: #ff4757; /* Red heading color */
+            animation: bounce 1s 2 alternate; /* Bounce animation */
+        }
+
+        @keyframes bounce {
+            to {
+                transform: translateY(-20px);
+            }
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow */
+        }
+
+        #loading-bar {
+            width: 50%;
+            max-width: 400px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent progress bar background */
+            border-radius: 5px; /* Rounded corners */
+            overflow: hidden;
+            animation: slideIn 2s ease-in-out; /* Slide-in animation */
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        #progress {
+            height: 100%;
+            background: linear-gradient(to right, #ff4757, #000); /* Red to black gradient progress bar color */
+            transition: width 0.3s ease;
+            animation: pulse 1s infinite alternate; /* Pulse animation */
+        }
+
+        @keyframes pulse {
+            to {
+                transform: scale(1.1);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="loader"></div>
+    <div id="loading-container">
+        <h1>Welcome to Blissolic</h1>
+        <p>Enjoy the experience while we load...</p>
+    </div>
+
+    <div id="loading-bar">
+        <div id="progress"></div>
+    </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Wait for the page to fully load, then redirect
-            setTimeout(function() {
-                window.location.href = "https://blissolic.com/home";
-            }, 3000); // Adjust the timeout value as needed (in milliseconds)
-        });
+        // Simulate loading by updating the progress bar
+        let progress = 0;
+        const progressBar = document.getElementById('progress');
+        const loadingInterval = setInterval(() => {
+            progress += 1;
+            progressBar.style.width = `${progress}%`;
+
+            if (progress === 100) {
+                clearInterval(loadingInterval);
+                // Redirect to another page after fully loaded
+                window.location.href = 'https://blissolic.com/home';
+            }
+        }, 50); // Adjust the interval based on your preference
     </script>
 </body>
 </html>
