@@ -1,3 +1,5 @@
+
+
 /*  import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
@@ -105,7 +107,7 @@ section .title::after{
 .navbar.sticky{
     padding: 15px 0;
     transition: all 0.3s ease;
-    background: ce62f1;
+    background: #ce62f1;
 }
 .navbar .max-width{
     display: flex;
