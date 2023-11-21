@@ -68,7 +68,7 @@ nav a {
 
 .social-icons a {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .social-icons img {
@@ -79,4 +79,44 @@ nav a {
 
 .social-icons p {
     margin-top: 10px;
+}
+
+/* Add these styles to your existing CSS file or create a new one */
+
+/* Default styles for light mode */
+body {
+    background-color: #fff;
+    color: #333;
+    margin: 0; /* Remove default body margin */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Button styles with transition */
+#toggle-mode {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Social icons with fade-in effect */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.6s ease;
+}
+
+/* Discord embed with fade-in effect */
+.discord-embed {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.6s ease;
 }
