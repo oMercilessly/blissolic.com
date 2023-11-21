@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blissolic</title>
+    <meta content="Embed Title" property="og:title" />
+    <meta content="Site Description" property="og:description" />
+    <meta content="https://embed.com/this-is-the-site-url" property="og:url" />
+    <meta content="https://embed.com/embedimage.png" property="og:image" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,22 +23,103 @@
     </ul>
 </nav>
 
+<!-- Dark mode toggle button -->
+<button id="toggle-mode">Toggle Mode</button>
+
 <!-- Home Section -->
 <section id="home">
     <h1 class="center-text">Welcome to Blissolic's Channel</h1>
-    <!-- Replace the video embed code with the actual video embed codes from YouTube -->
-    <div class="video-grid">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id-1" frameborder="0" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id-2" frameborder="0" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id-3" frameborder="0" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id-4" frameborder="0" allowfullscreen></iframe>
-        <!-- Add more video embeds as needed -->
-        <!-- Repeat the above iframe code for additional videos -->
-    </div>
-</section>
+    <!-- Use a container to hold the video embeds -->
+    <div id="video-container" class="video-grid"></div>
 
-<!-- JavaScript (Optional, for additional functionality) -->
-<script src="script.js"></script>
+    <!-- JavaScript (Optional, for additional functionality) -->
+    <script>
+        // YouTube API key and Blissolic's channel ID
+        const apiKey = 'AIzaSyDvK4yLobxJLqLiITSns7HSe6Om380rZak';
+        const channelId = 'UC2KjRb9JQ9yAEIw8HMFUENg';
+    
+        function fetchAndUpdateVideos() {
+            // Fetch the latest videos from Blissolic's channel
+            fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=4&order=date&type=video&key=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Get the video IDs from the API response
+                    const videoIds = data.items.map(item => item.id.videoId);
+    
+                    // Create and append video iframes to the container
+                    const videoContainer = document.getElementById('video-container');
+                    // Clear existing videos
+                    videoContainer.innerHTML = '';
+                    videoIds.forEach(videoId => {
+                        const iframe = document.createElement('iframe');
+                        iframe.width = 560;
+                        iframe.height = 315;
+                        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+                        iframe.frameBorder = 0;
+                        iframe.allowFullscreen = true;
+    
+                        videoContainer.appendChild(iframe);
+                    });
+                })
+                .catch(error => console.error('Error fetching YouTube data:', error));
+        }
+    
+        // Fetch and update videos initially
+        fetchAndUpdateVideos();
+    
+        // Set up periodic refresh every 1 hour (adjust the interval as needed)
+        setInterval(fetchAndUpdateVideos, 3600000); // 1 hour in milliseconds
+    </script>
+
+    <!-- Dark mode toggle script -->
+    <script>
+// Function to toggle dark mode
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+
+    // Store the current mode preference in local storage
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+
+    // Update Discord embed based on dark mode
+    updateDiscordEmbed(isDarkMode);
+}
+
+// Function to update Discord embed based on dark mode
+function updateDiscordEmbed(isDarkMode) {
+    const discordFrame = document.getElementById('discord-frame');
+    const theme = isDarkMode ? 'dark' : 'light';
+
+    // Replace the placeholder with your Discord server invite or widget
+    discordFrame.src = `https://discord.com/widget?id=1048665452991221811&theme=${theme}`;
+}
+
+// Add event listener to the toggle mode button
+document.getElementById('toggle-mode').addEventListener('click', toggleDarkMode);
+
+// Check and set the initial dark mode state from local storage
+const savedDarkMode = localStorage.getItem('darkMode');
+if (savedDarkMode === 'true') {
+    document.body.classList.add('dark-mode');
+    updateDiscordEmbed(true);
+} else {
+    updateDiscordEmbed(false);
+}
+
+// Add event listener for page load to trigger fade-in effects
+document.addEventListener('DOMContentLoaded', function () {
+    // Fade in social icons
+    const socialIcons = document.querySelector('.social-icons');
+    socialIcons.style.opacity = 1;
+
+    // Fade in Discord embed
+    const discordEmbed = document.querySelector('.discord-embed');
+    discordEmbed.style.opacity = 1;
+});
+    </script>
+
+</section>
 
 </body>
 </html>
