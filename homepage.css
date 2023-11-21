@@ -625,7 +625,7 @@ ion-icon {
   font-size: 30px;
   color: #ffffff;
   font-weight: bold;
-  background: linear-gradient(45deg, #414aeb 0%, #4aa7fe 100%);
+  background: linear-gradient(45deg, #d31453 0%, #c931af 100%);
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -634,7 +634,7 @@ ion-icon {
 
 .rb:before {
   content: '';
-  background: linear-gradient(45deg, #1b24cd, #9aa1fe, #2298e2, #414aeb, #1b24cd, #414aeb);
+  background: linear-gradient(45deg, #cf1170, #cf11a2, #cf11c6, #b911cf, #8f11cf, #5b11cf);
   color: white;
   position: absolute;
   box-shadow: none;
@@ -669,7 +669,7 @@ ion-icon {
 
 .rb:after {
   content: '';
-  background: linear-gradient(45deg, #1b24cd, #9aa1fe, #2298e2, #414aeb, #1b24cd, #414aeb);
+  background: linear-gradient(45deg, #cf1170, #cf11a2, #cf11c6, #b911cf, #8f11cf, #5b11cf);
   position: absolute;
   box-shadow: none;
   top: -2px;
@@ -897,13 +897,13 @@ html::-webkit-scrollbar-track {
 .blur{
     position: absolute;
     align-content:left;
-    box-shadow: 0 0 1000px 50px #1d6ed7;
+    box-shadow: 0 0 1000px 50px #d31453;
     z-index: -100;
 }
 
 .blurright{
     position: absolute;
     align-content:right;
-    box-shadow: 0 0 1000px 50px #245494;
+    box-shadow: 0 0 1000px 50px #d31453;
     z-index: -100;
 }
